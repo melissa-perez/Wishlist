@@ -2,6 +2,7 @@ package com.example.wishlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,9 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import java.lang.Float.parseFloat
 
 class MainActivity : AppCompatActivity() {
-    var listOfWishes = mutableListOf<Wish>()
-    lateinit var wishAdapter: WishItemAdapter
-
+    lateinit var listOfWishes: MutableList<Wish>
+    lateinit var wishAdapter:WishItemAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
                 wishAdapter.notifyItemRemoved(position)
             }
         }
+        listOfWishes = mutableListOf()
 
         val wishInput = findViewById<EditText>(R.id.editWish)
         val wishPriceInput = findViewById<EditText>(R.id.editWishPrice)
@@ -36,8 +37,13 @@ class MainActivity : AppCompatActivity() {
             val userInputWish = wishInput.text.toString()
             val userInputWishPrice = parseFloat(wishPriceInput.text.toString())
             val userInputWishUrl = wishUrlInput.text.toString()
+            Log.v("user", userInputWish)
+            Log.v("user", userInputWishPrice.toString())
+            Log.v("user", userInputWishUrl)
 
-            listOfWishes.add(Wish(userInputWish, userInputWishUrl, userInputWishPrice))
+            if (listOfWishes.add(Wish(userInputWish, userInputWishUrl, userInputWishPrice)))
+                Log.v("user", "hellooooo i entered")
+            Log.v("user", listOfWishes[listOfWishes.size - 1].toString())
             wishAdapter.notifyItemInserted(listOfWishes.size - 1)
             wishInput.setText("")
             wishPriceInput.setText("")
