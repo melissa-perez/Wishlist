@@ -4,4 +4,7 @@
     <string name="enterWishText">Enter item name</string>
     <string name="exampleUrlText">https://example.example/my-item-url</string>
     <string name="examplePriceText">5.99</string>
+    <string name="wishSampleText">Phoenix Wand</string>
+    <string name="wishPriceSampleText">55.00</string>
+    <string name="wishUrlSampleText">Ollivander\'s</string>
 </resources>
