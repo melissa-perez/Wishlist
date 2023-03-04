@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Wishlist</string>
+    <string name="wishBtnText">Submit</string>
+    <string name="enterWishText">Enter item name</string>
+    <string name="exampleUrlText">https://example.example/my-item-url</string>
+    <string name="examplePriceText">5.99</string>
 </resources>
