@@ -3,15 +3,17 @@ package com.example.wishlist
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.lang.Float.parseFloat
 
 class MainActivity : AppCompatActivity() {
     lateinit var listOfWishes: MutableList<Wish>
-    lateinit var wishAdapter:WishItemAdapter
+    lateinit var wishAdapter: WishItemAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,19 +37,30 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.wishSubmitBtn).setOnClickListener {
             val userInputWish = wishInput.text.toString()
-            val userInputWishPrice = parseFloat(wishPriceInput.text.toString())
+            val userInputWishPrice: Float
             val userInputWishUrl = wishUrlInput.text.toString()
-            Log.v("user", userInputWish)
-            Log.v("user", userInputWishPrice.toString())
-            Log.v("user", userInputWishUrl)
 
-            if (listOfWishes.add(Wish(userInputWish, userInputWishUrl, userInputWishPrice)))
-                Log.v("user", "hellooooo i entered")
-            Log.v("user", listOfWishes[listOfWishes.size - 1].toString())
+            if (userInputWish.isEmpty()) {
+                Toast.makeText(it.context, "Please enter an wish item name.", Toast.LENGTH_SHORT)
+                    .show();
+                return@setOnClickListener
+            } else if (wishPriceInput.text.toString().isEmpty()) {
+                Toast.makeText(it.context, "Please enter a price.", Toast.LENGTH_SHORT).show();
+                return@setOnClickListener
+            } else
+                userInputWishPrice = parseFloat(wishPriceInput.text.toString())
+
+            listOfWishes.add(Wish(userInputWish, userInputWishUrl, userInputWishPrice))
+
+
             wishAdapter.notifyItemInserted(listOfWishes.size - 1)
-            wishInput.setText("")
-            wishPriceInput.setText("")
-            wishUrlInput.setText("")
+            wishInput.text.clear()
+            wishPriceInput.text.clear()
+            wishUrlInput.text.clear()
+
+            wishInput.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            wishPriceInput.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            wishUrlInput.onEditorAction(EditorInfo.IME_ACTION_DONE)
         }
     }
 }

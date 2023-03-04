@@ -24,7 +24,7 @@ class WishItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.v("user", position.toString())
+        Log.v("pos", position.toString())
 
         val wish = wishes[position]
         holder.wishName.text = wish.wishName
