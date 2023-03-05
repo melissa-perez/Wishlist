@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 class WishItemAdapter(
-    val wishes: MutableList<Wish>,
+    private val wishes: MutableList<Wish>,
     private val wishOnLongClickListener: OnLongClickListener
 ) :
     RecyclerView.Adapter<WishItemAdapter.ViewHolder>() {
@@ -25,8 +25,6 @@ class WishItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.v("pos", position.toString())
-
         val wish = wishes[position]
         holder.wishName.text = wish.wishName
         holder.wishUrl.text = wish.wishUrl
