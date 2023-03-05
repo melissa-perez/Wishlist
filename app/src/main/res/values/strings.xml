@@ -2,7 +2,7 @@
     <string name="app_name">Wishlist</string>
     <string name="wishBtnText">Submit</string>
     <string name="enterWishText">Enter item name</string>
-    <string name="exampleUrlText">https://example.example/my-item-url</string>
+    <string name="exampleUrlText">Ex: https://xyz.com/my-item-url</string>
     <string name="examplePriceText">Ex: 5.99</string>
     <string name="wishSampleText">Phoenix Wand</string>
     <string name="wishPriceSampleText">55.00</string>
