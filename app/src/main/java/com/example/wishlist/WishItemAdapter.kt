@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
 
 class WishItemAdapter(
     val wishes: MutableList<Wish>,
@@ -29,7 +30,7 @@ class WishItemAdapter(
         val wish = wishes[position]
         holder.wishName.text = wish.wishName
         holder.wishUrl.text = wish.wishUrl
-        holder.wishPrice.text = wish.wishPrice.toString()
+        holder.wishPrice.text = String.format("%.2f", wish.wishPrice)
     }
 
     override fun getItemCount(): Int {

@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         wishesRV.layoutManager = LinearLayoutManager(this)
 
         findViewById<Button>(R.id.wishSubmitBtn).setOnClickListener {
-            val userInputWish = wishInput.text.toString()
+            val userInputWish = wishInput.text.toString().trim()
             val userInputWishPrice: Float
-            val userInputWishUrl = wishUrlInput.text.toString()
+            val userInputWishUrl = wishUrlInput.text.toString().trim()
 
             if (userInputWish.isEmpty()) {
                 Toast.makeText(it.context, "Please enter an wish item name.", Toast.LENGTH_SHORT)
