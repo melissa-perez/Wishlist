@@ -33,6 +33,7 @@ GIF created with LICEcap
 
 
 ## Notes
+Describe any challenges encountered while building the app.
 
 - Incompatible data types leading to crashes
 - Figuring out where to place the URL intent
