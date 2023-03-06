@@ -37,7 +37,7 @@ Describe any challenges encountered while building the app.
 
 - Incompatible data types leading to crashes
 - Figuring out where to place the URL intent
-- Attempted to do Fil IO for storage, but ran into issues and time constraints! :)
+- Attempted to do File IO for storage, but ran into issues and time constraints! :)
 
 ## License
 
