@@ -4,7 +4,7 @@ Submitted by: **Melissa Perez**
 
 **Wishlist** is a wishlist app that helps the user keep track of what they want to buy.
 
-Time spent: **X** hours spent in total
+Time spent: **15** hours spent in total
 
 ## Required Features
 
@@ -27,14 +27,16 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/jSeFffw.gif' title='Video Walkthrough' width='100' alt='Video Walkthrough' />
 
 GIF created with LICEcap
 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+- Incompatible data types leading to crashes
+- Figuring out where to place the URL intent
+- Attempted to do Fil IO for storage, but ran into issues and time constraints! :)
 
 ## License
 

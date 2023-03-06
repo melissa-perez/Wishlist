@@ -84,6 +84,7 @@
         android:shadowColor="@color/yellow_500"
         android:shadowRadius="50"
         android:textColorHint="@color/black"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/wishSubmitBtn"
         app:layout_constraintStart_toStartOf="parent" />
