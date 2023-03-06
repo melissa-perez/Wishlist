@@ -1,19 +1,25 @@
 package com.example.wishlist
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
 class WishItemAdapter(
     private val wishes: MutableList<Wish>,
-    private val wishOnLongClickListener: OnLongClickListener
+    private val wishListeners: ClickListeners,
 ) :
     RecyclerView.Adapter<WishItemAdapter.ViewHolder>() {
-    interface OnLongClickListener {
+    interface ClickListeners {
         fun onItemLongClicked(position: Int)
     }
 
@@ -45,8 +51,17 @@ class WishItemAdapter(
             wishUrl = wishView.findViewById(R.id.wishUrlView)
             wishPrice = wishView.findViewById(R.id.wishPriceView)
             wishView.setOnLongClickListener {
-                wishOnLongClickListener.onItemLongClicked(adapterPosition)
+                wishListeners.onItemLongClicked(adapterPosition)
                 true
+            }
+            wishUrl.setOnClickListener {
+                val item = wishUrl.text.toString()
+                try {
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(item))
+                    ContextCompat.startActivity(it.context, browserIntent, null)
+                } catch (e: ActivityNotFoundException) {
+                    Toast.makeText(it.context, "Invalid URL for " + item, Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

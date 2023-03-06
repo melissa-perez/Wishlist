@@ -24,6 +24,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
         android:text="@string/wishSampleText"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/wishPriceView"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +41,7 @@
         android:gravity="end"
         android:lines="1"
         android:text="@string/wishPriceSampleText"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/wishUrlView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,6 +60,8 @@
         android:shadowDy="0"
         android:shadowRadius="50"
         android:text="@string/wishUrlSampleText"
+        android:textSize="15sp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wishPriceView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
