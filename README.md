@@ -27,9 +27,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/jSeFffw.gif' title='Video Walkthrough' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/jSeFffw.gif' width='400' title='Video Walkthrough' alt='Video Walkthrough' />
 
-GIF created with LICEcap
+Made a secondary gif to show that Recyclerview was working properly with scrolling!
+
+<img src='wishlistscrollable.gif' width='400' title='Video Walkthrough' alt='Video Walkthrough' />
+
+GIFs created with LICEcap
 
 
 ## Notes
